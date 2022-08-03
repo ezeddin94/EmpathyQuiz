@@ -276,7 +276,6 @@ namespace ImageQuizz
                 RestoreCheckedRadioButton();
                 button_Next.Visible = true;
                 button_Result.Visible = false;
-                label_Result.Visible = false;
                 imageViewer.Visible = true;
                 radioButton1.Visible = true;
                 radioButton2.Visible = true;
@@ -327,7 +326,6 @@ namespace ImageQuizz
 
         private void button_Result_Click(object sender, EventArgs e)
         {
-            label_Result.Visible = true;
             String json = File.ReadAllText("data.txt");
             UserData listUserAnswers = Newtonsoft.Json.JsonConvert.DeserializeObject<UserData>(json);
             if (listUserAnswers != null)
@@ -347,7 +345,7 @@ namespace ImageQuizz
                     }
 
                     Result = Result / ListInt.Count;
-                    label_Result.Text = Result.ToString();
+                    MessageBox.Show("Your Empathy is: " + Result.ToString());
                 }
             }
         }
