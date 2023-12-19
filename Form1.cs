@@ -24,10 +24,17 @@ namespace ImageQuizz
         public ImageQuizzForm()
         {
             InitializeComponent();
+
+            if (!File.Exists("data.txt"))
+            {
+                File.Create("data.txt").Close();
+            }
+
             imageViewer.Visible = false;
             filteredFiles = Directory.GetFiles("Images", "*.*")
                 .Where(file => file.ToLower().EndsWith("jpg") || file.ToLower().EndsWith("gif")
                 || file.ToLower().EndsWith("png") || file.ToLower().EndsWith("bmp")).ToList();
+
             imageViewer.SizeMode = PictureBoxSizeMode.Zoom;
             tempRadioButton = new RadioButton();
             unvisibleAnsower();
@@ -48,8 +55,16 @@ namespace ImageQuizz
                     button_Start.Text = "Stop";
                     button_Start.BackColor = Color.Red;
                     isPlaying = true;
-                    imageViewer.Image = Image.FromFile(filteredFiles[counter]);
-                   // System.IO.File.WriteAllText("data.txt", string.Empty);
+                    if (filteredFiles.Count > 0)
+                    {
+                        imageViewer.Image = Image.FromFile(filteredFiles[counter]);
+                        imageViewer.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No images found");
+                    }
+                    System.IO.File.WriteAllText("data.txt", string.Empty);
                 }
                 else
                 {
@@ -71,6 +86,7 @@ namespace ImageQuizz
         {
             tempRadioButton = sender as RadioButton;
             string value = "";
+            string str = "";
             bool isChecked = tempRadioButton.Checked;
 
             if (isChecked)
@@ -81,8 +97,8 @@ namespace ImageQuizz
                     bool shouldBeChanged = false;
                     try
                     {
-                        String json = File.ReadAllText("data.txt");
-                        UserData listUserAnswers = Newtonsoft.Json.JsonConvert.DeserializeObject<UserData>(json);
+                        str = File.ReadAllText("data.txt");
+                        UserData listUserAnswers = Newtonsoft.Json.JsonConvert.DeserializeObject<UserData>(str);
                         if (listUserAnswers != null)
                         {
                             if (listUserAnswers.UserName == _name)
@@ -105,8 +121,8 @@ namespace ImageQuizz
 
                         if (shouldBeChanged)
                         {
-                            var json11 = JsonConvert.SerializeObject(listUserAnswers, Formatting.Indented);
-                            File.WriteAllText("data.txt", json11);
+                            str = JsonConvert.SerializeObject(listUserAnswers, Formatting.Indented);
+                            File.WriteAllText("data.txt", str);
                         }
 
                         else
@@ -119,13 +135,14 @@ namespace ImageQuizz
                                 Time = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"),
                             };
                             user.PicValuation.Add(picValuation);
-                            var json11 = JsonConvert.SerializeObject(user, Formatting.Indented);
-                            File.WriteAllText("data.txt", json11);
+                            str = JsonConvert.SerializeObject(user, Formatting.Indented);
+                            File.WriteAllText("data.txt", str);
                         }
                     }
                     catch (Exception ex)
                     {
                         shouldBeChanged = false;
+                        MessageBox.Show(ex.Message);
                     }
                 }
             }
@@ -151,7 +168,7 @@ namespace ImageQuizz
             button_Result.Visible = false;
             textBox_Name.Visible = true;
             label_Name.Visible = true;
-            label1.Visible = false;
+            label_Text_Head.Visible = false;
             textBox_Name.Text = "";
         }
 
@@ -174,7 +191,7 @@ namespace ImageQuizz
             button_previous.Visible = true;
             textBox_Name.Visible = false;
             label_Name.Visible = false;
-            label1.Visible = true;
+            label_Text_Head.Visible = true;
         }
 
         private static System.Drawing.Image resizeImage(System.Drawing.Image imgToResize, Size size)
@@ -216,6 +233,7 @@ namespace ImageQuizz
             counter += 1;
             if (counter >= filteredFiles.Count)
             {
+                label_Text_Head.Visible = false;
                 button_Result.Visible = true;
                 imageViewer.Visible = false;
                 button_Next.Visible = false;
@@ -274,6 +292,7 @@ namespace ImageQuizz
                 }
                 //imageViewer.Image = resizeImage(Image.FromFile(filteredFiles[counter]), new Size(405, 1000));
                 RestoreCheckedRadioButton();
+                label_Text_Head.Visible = true;
                 button_Next.Visible = true;
                 button_Result.Visible = false;
                 imageViewer.Visible = true;

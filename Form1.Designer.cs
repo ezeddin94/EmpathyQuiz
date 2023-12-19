@@ -44,7 +44,7 @@
             this.imageViewer = new System.Windows.Forms.PictureBox();
             this.label_Name = new System.Windows.Forms.Label();
             this.textBox_Name = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Text_Head = new System.Windows.Forms.Label();
             this.button_Next = new System.Windows.Forms.Button();
             this.button_previous = new System.Windows.Forms.Button();
             this.button_Result = new System.Windows.Forms.Button();
@@ -229,15 +229,15 @@
             this.textBox_Name.Size = new System.Drawing.Size(248, 23);
             this.textBox_Name.TabIndex = 12;
             // 
-            // label1
+            // label_Text_Head
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(49, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 19);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "how much pain do you see in this picture?";
+            this.label_Text_Head.AutoSize = true;
+            this.label_Text_Head.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_Text_Head.Location = new System.Drawing.Point(49, 20);
+            this.label_Text_Head.Name = "label_Text_Head";
+            this.label_Text_Head.Size = new System.Drawing.Size(299, 19);
+            this.label_Text_Head.TabIndex = 13;
+            this.label_Text_Head.Text = "how much pain do you see in this picture?";
             // 
             // button_Next
             // 
@@ -277,7 +277,7 @@
             this.Controls.Add(this.button_Result);
             this.Controls.Add(this.button_previous);
             this.Controls.Add(this.button_Next);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Text_Head);
             this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.label_Name);
             this.Controls.Add(this.radioButton12);
@@ -320,7 +320,7 @@
         private System.Windows.Forms.PictureBox imageViewer;
         private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.TextBox textBox_Name;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Text_Head;
         private System.Windows.Forms.Button button_Next;
         private System.Windows.Forms.Button button_previous;
         private System.Windows.Forms.Button button_Result;
