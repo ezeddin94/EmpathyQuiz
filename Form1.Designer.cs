@@ -44,17 +44,16 @@
             this.imageViewer = new System.Windows.Forms.PictureBox();
             this.label_Name = new System.Windows.Forms.Label();
             this.textBox_Name = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Text_Head = new System.Windows.Forms.Label();
             this.button_Next = new System.Windows.Forms.Button();
             this.button_previous = new System.Windows.Forms.Button();
             this.button_Result = new System.Windows.Forms.Button();
-            this.label_Result = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imageViewer)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Start
             // 
-            this.button_Start.Location = new System.Drawing.Point(255, 488);
+            this.button_Start.Location = new System.Drawing.Point(256, 506);
             this.button_Start.Name = "button_Start";
             this.button_Start.Size = new System.Drawing.Size(359, 54);
             this.button_Start.TabIndex = 0;
@@ -65,7 +64,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(255, 453);
+            this.radioButton1.Location = new System.Drawing.Point(276, 453);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(31, 19);
             this.radioButton1.TabIndex = 1;
@@ -89,7 +88,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(551, 453);
+            this.radioButton3.Location = new System.Drawing.Point(572, 453);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(31, 19);
             this.radioButton3.TabIndex = 9;
@@ -101,7 +100,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(514, 453);
+            this.radioButton4.Location = new System.Drawing.Point(535, 453);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(31, 19);
             this.radioButton4.TabIndex = 8;
@@ -113,7 +112,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(477, 453);
+            this.radioButton5.Location = new System.Drawing.Point(498, 453);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(31, 19);
             this.radioButton5.TabIndex = 7;
@@ -125,7 +124,7 @@
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(440, 453);
+            this.radioButton6.Location = new System.Drawing.Point(461, 453);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(31, 19);
             this.radioButton6.TabIndex = 6;
@@ -137,7 +136,7 @@
             // radioButton7
             // 
             this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(403, 453);
+            this.radioButton7.Location = new System.Drawing.Point(424, 453);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(31, 19);
             this.radioButton7.TabIndex = 5;
@@ -149,7 +148,7 @@
             // radioButton8
             // 
             this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(366, 453);
+            this.radioButton8.Location = new System.Drawing.Point(387, 453);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(31, 19);
             this.radioButton8.TabIndex = 4;
@@ -161,7 +160,7 @@
             // radioButton9
             // 
             this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(329, 453);
+            this.radioButton9.Location = new System.Drawing.Point(350, 453);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(31, 19);
             this.radioButton9.TabIndex = 3;
@@ -173,7 +172,7 @@
             // radioButton10
             // 
             this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(292, 453);
+            this.radioButton10.Location = new System.Drawing.Point(313, 453);
             this.radioButton10.Name = "radioButton10";
             this.radioButton10.Size = new System.Drawing.Size(31, 19);
             this.radioButton10.TabIndex = 2;
@@ -185,7 +184,7 @@
             // radioButton11
             // 
             this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(588, 453);
+            this.radioButton11.Location = new System.Drawing.Point(609, 453);
             this.radioButton11.Name = "radioButton11";
             this.radioButton11.Size = new System.Drawing.Size(37, 19);
             this.radioButton11.TabIndex = 10;
@@ -197,7 +196,7 @@
             // radioButton12
             // 
             this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(218, 453);
+            this.radioButton12.Location = new System.Drawing.Point(239, 453);
             this.radioButton12.Name = "radioButton12";
             this.radioButton12.Size = new System.Drawing.Size(31, 19);
             this.radioButton12.TabIndex = 0;
@@ -230,15 +229,15 @@
             this.textBox_Name.Size = new System.Drawing.Size(248, 23);
             this.textBox_Name.TabIndex = 12;
             // 
-            // label1
+            // label_Text_Head
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(49, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 19);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "how much pain do you see in this picture?";
+            this.label_Text_Head.AutoSize = true;
+            this.label_Text_Head.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_Text_Head.Location = new System.Drawing.Point(49, 20);
+            this.label_Text_Head.Name = "label_Text_Head";
+            this.label_Text_Head.Size = new System.Drawing.Size(299, 19);
+            this.label_Text_Head.TabIndex = 13;
+            this.label_Text_Head.Text = "how much pain do you see in this picture?";
             // 
             // button_Next
             // 
@@ -270,24 +269,15 @@
             this.button_Result.UseVisualStyleBackColor = true;
             this.button_Result.Click += new System.EventHandler(this.button_Result_Click);
             // 
-            // label_Result
-            // 
-            this.label_Result.AutoSize = true;
-            this.label_Result.Location = new System.Drawing.Point(308, 286);
-            this.label_Result.Name = "label_Result";
-            this.label_Result.Size = new System.Drawing.Size(0, 15);
-            this.label_Result.TabIndex = 17;
-            // 
             // ImageQuizzForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 568);
-            this.Controls.Add(this.label_Result);
+            this.ClientSize = new System.Drawing.Size(874, 584);
             this.Controls.Add(this.button_Result);
             this.Controls.Add(this.button_previous);
             this.Controls.Add(this.button_Next);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Text_Head);
             this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.label_Name);
             this.Controls.Add(this.radioButton12);
@@ -330,12 +320,10 @@
         private System.Windows.Forms.PictureBox imageViewer;
         private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.TextBox textBox_Name;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Text_Head;
         private System.Windows.Forms.Button button_Next;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_previous;
         private System.Windows.Forms.Button button_Result;
-        private System.Windows.Forms.Label label_Result;
     }
 }
 
